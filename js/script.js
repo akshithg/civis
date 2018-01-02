@@ -18,6 +18,8 @@ $(document).ready(function(){
     //tab
     $('.tabs').delegate('li:not(.active)','click',function(){$(this).addClass('active').siblings().removeClass('active').parents('.tab').find('.box').hide().eq($(this).index()).fadeIn(250);});
     
-    
+    $("#contactForm").submit(function(event){
+    event.preventDefault();
+    submitForm();
     
 });//document ready
