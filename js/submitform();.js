@@ -3,7 +3,7 @@ function submitForm(){
  
     $.ajax({
         type: "POST",
-        url: "html/process.php",
+        url: "process.php",
         data: "&email=" + email,
         success : function(text){
             if (text == "success"){
