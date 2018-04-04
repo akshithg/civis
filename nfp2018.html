@@ -2,6 +2,19 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="google-site-verification" content="eruILdauIBqArJfN9y2ay7Apqf8Yb0pgQo76jq3D-NA" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114435812-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114435812-1');
+  </script>
+
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
   <style>
     * {
@@ -156,6 +169,12 @@
 
       document.querySelector('#goto-form').addEventListener('click', function () {
         document.querySelector('#description').style.visibility = 'hidden';
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Button',
+          eventAction: 'goto-form',
+          eventLabel: 'NFP2018'
+        });
       });
     });
   </script>
