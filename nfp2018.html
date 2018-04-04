@@ -1,0 +1,164 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .column {
+      width: 100%;
+      float: left;
+      margin: 0 auto;
+    }
+
+    .column.description {
+      background-color: white;
+      position: fixed;
+      height: 100%;
+      visibility: visible;
+      overflow: scroll;
+    }
+
+    .overlay {
+      padding: 30px;
+      max-width: 830px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: 70px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: -2px;
+      margin: 10px 0px 0px 0px;
+    }
+
+    .title {
+      color: #666;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    #page-content {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .deadline {
+      font-size: 1rem;
+      color: red;
+      display: inline-block;
+      margin: 10px 0px 30px 0px;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 32px;
+      margin: 10px 0 40px;
+    }
+
+    #goto-form {
+      border: 2px solid rgb(15, 157, 88);
+      display: inline-block;
+      padding: 10px 20px;
+      color: rgb(15, 157, 88);
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 0.6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .column {
+        width: 100%;
+        height: 100vh;
+        float: left
+      }
+
+      .header {
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 0.6rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="column description" id="description">
+    <div class="overlay">
+      <img class="logo" src="upload/logo2x.png" alt="Civis">
+      <div class="title">Ministry of Environment, Forest &amp; Climate Change</div>
+      <div class="title">is seeking responses to</div>
+      <h1>National Forest Plan of 2018</h1>
+      <div class="deadline">Deadline for responses: 14th April 2018
+        <span class='emphasis'>
+          <span id="days-remaining"></span> Days to go</span>
+      </div>
+
+      <h3>What is a public consultation?</h3>
+      <p>
+        Government policies and decisions impact our lives, often the Government asks for our feedback before they finalise a law,
+        this process is called a consultation.
+      </p>
+
+      <h3>Why should you respond?</h3>
+      <p>Even though we may not be experts in the field this policy relates to, this policy decision impacts our life and environment.
+        This makes it important to be aware about the law and share your inputs.
+      </p>
+
+      <h3>What is this document?</h3>
+      <p>
+        The Government has put out a draft of the National Forest Policy and they want your feedback on it. This document helps you
+        see the full plan and allows you to question and comment on specific portions of the plan. In addition, we have put
+        together a simple version of the plan that you can submit your feedback on and we have a forum on Facebook where
+        you can participate in a detailed discussion on it.
+      </p>
+
+      <div id='goto-form'>Give Feedback</div>
+    </div>
+  </div>
+  <div class="column form">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdHKzLnLinirLdj9WW1db57CKc2IG6bW0GejNrn8vQD8r7QfA/viewform?embedded=true"
+      width="100%" height="100%" style="display: block;" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      let expiryDate = new Date('14 APR 2018');
+      let daysRemaining = Math.floor((expiryDate.getTime() - Date.now()) / 1000 / 60 / 60 / 24);
+      document.querySelector('#days-remaining').innerHTML = daysRemaining.toString();
+
+      document.querySelector('#goto-form').addEventListener('click', function () {
+        document.querySelector('#description').style.visibility = 'hidden';
+      });
+    });
+  </script>
+</body>
+
+</html>
