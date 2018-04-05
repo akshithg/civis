@@ -736,6 +736,7 @@ footer .logo img {
       padding: 19px;
       color: black;
       text-align: center;
+      box-shadow: 0px 0px 140px rgba(0, 137, 228,0.3);
 }
 /* Retina -------------------------- */
 @media only screen and (-webkit-min-device-pixel-ratio:2),
