@@ -189,7 +189,7 @@ body {
     padding: 0 30px;
 }
 a {
-    color: #61b8f5;
+    color: #0096ff;
     cursor: pointer;
     -moz-transition: color 0.15s linear;
     -o-transition: color 0.15s linear;
@@ -358,7 +358,7 @@ footer .logo img {
 
 /* sidebar -------------------------- */
 .sidebar {
-    
+
 }
 
 
@@ -712,7 +712,7 @@ footer .logo img {
     }
     .subscribe-email {
         width: 200px;
-    }   
+    }
 }
 @media (max-width: 479px){
     body {
@@ -731,9 +731,14 @@ footer .logo img {
         width: 100%;
     }
 }
-
+.notification{
+      background: #fffecb;
+      padding: 19px;
+      color: black;
+      text-align: center;
+}
 /* Retina -------------------------- */
-@media only screen and (-webkit-min-device-pixel-ratio:2), 
+@media only screen and (-webkit-min-device-pixel-ratio:2),
 only screen and (min--moz-device-pixel-ratio:2),
 only screen and (-o-min-device-pixel-ratio:2/1),
 only screen and (min-device-pixel-ratio:2),
@@ -752,4 +757,3 @@ only screen and (min-resolution:2dppx){
         background-size: 300px 150px;
     }
 }
-
