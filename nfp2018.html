@@ -50,13 +50,20 @@
 
     .logo {
       width: 70px;
-      margin-bottom: 30px;
+      margin: 4px 30px;
+      float: left;
+    }
+    #logo-header{
+      background-color:#e2f2ff;
+      padding: 10px;
+      height: 57px;
     }
 
     h1 {
       font-size: 3rem;
       letter-spacing: -2px;
       margin: 10px 0px 0px 0px;
+      font-size: 2.8rem;
     }
 
     .title {
@@ -111,7 +118,13 @@
       font-weight: 700;
       cursor: pointer;
     }
-
+    .header-link{
+      float: right;
+      margin: 10px 20px 4px 20px;
+      font-size: 14px;
+      font-weight: 300;
+      color: #3296dc;
+    }
     @media only screen and (min-width: 320px) and (max-width: 480px) {
       .column {
         width: 100%;
@@ -124,11 +137,13 @@
       }
 
       .title {
-        font-size: 0.6rem;
+        font-size: 1rem;
       }
+      h1{
+        font-size: 1.2rem;
+      }
+      h2{
 
-      h1 {
-        font-size: 1.5rem;
       }
     }
   </style>
@@ -136,8 +151,11 @@
 
 <body>
   <div class="column description" id="description">
+    <div id='logo-header'>
+      <img class="logo" src="upload/logo2x.png" alt="Civis - BETTER DECISIONS TOGETHER"/>
+      <a class="header-link" href='http://www.civis.vote' target="_blank">What is Civis?</a>
+    </div>
     <div class="overlay">
-      <img class="logo" src="upload/logo2x.png" alt="Civis">
       <div class="title">Ministry of Environment, Forest &amp; Climate Change</div>
       <div class="title">is seeking responses to</div>
       <h1>National Forest Plan of 2018</h1>
