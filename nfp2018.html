@@ -62,12 +62,13 @@
     h1 {
       font-size: 3rem;
       letter-spacing: -2px;
-      margin: 10px 0px 0px 0px;
+      margin: 0px 0px 0px 0px;
       font-size: 2.8rem;
     }
 
     .title {
       font-size: 18px;
+      color:#808080;
     }
 
     #page-content {
@@ -77,24 +78,27 @@
     }
 
     .deadline {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: red;
       display: inline-block;
-      margin: 0px 0px 30px 0px;
+      margin: 5px 0px 5px 0px;
       line-height: 35px;
+      border-left: 4px solid red;
+      padding: 0px 7px;
+      background: #ffe6e6;
     }
 
     h3 {
       margin-bottom: 0;
       letter-spacing: 0.4px;
-      color: #757575;
+      color: #929292;
     }
 
     p {
       font-size: 17px;
       line-height: 28px;
       margin: 4px 0 40px;
-      color: #757575;
+      color: #929292;
     }
 
     .emphasis {
@@ -118,7 +122,7 @@
       background: #0089e4;
       border-radius: 5px;
       letter-spacing: 0.7px;
-      float: right;
+      /* float: right; */
       margin-bottom: 30px;
     }
     #goto-form:hover{
@@ -130,6 +134,11 @@
       font-size: 14px;
       font-weight: 300;
       color: #3296dc;
+    }
+    #big-note{
+      line-height: 38px;
+      font-size: 25px;
+      color: #222;
     }
     @media only screen and (min-width: 320px) and (max-width: 480px) {
       .column {
@@ -149,6 +158,7 @@
         font-size: 1.9rem;
         letter-spacing: 0px;
         line-height: 33px;
+        margin-top: 10px;
       }
       h2{
 
@@ -163,8 +173,23 @@
         margin: 2px 0 40px;
       }
       .deadline{
-        line-height: 31px;
-        margin-top: 0px;
+        line-height: 25px;
+        margin: 10px 0px 10px 0px;
+        font-size: 18px;
+        padding: 9px;
+      }
+      #big-note {
+        line-height: 29px;
+        font-size: 21px;
+      }
+      #goto-form{
+        width: 100%;
+        text-align: center;
+      }
+      .read-draft{
+        text-align: center;
+        display: block;
+        margin: 0px 0px 30px 0px;
       }
     }
   </style>
@@ -177,14 +202,19 @@
       <a class="header-link" href='http://www.civis.vote' target="_blank">What is Civis?</a>
     </div>
     <div class="overlay">
-      <div class="title">Ministry of Environment, Forest &amp; Climate Change</div>
-      <div class="title">is seeking responses to</div>
+      <div class="title"><b>Ministry of Environment, Forest &amp; Climate Change</b> is seeking responses to</div>
       <h1>National Forest Plan of 2018</h1>
       <div class="deadline">Deadline for responses: 14th April 2018&nbsp;&nbsp;&bull;
-        <span class='emphasis'>
+      <span class='emphasis'>
           <span style='font-weight:800;'><span id="days-remaining"></span> Days to go</span></span>
       </div>
+      <p id='big-note'>The Forest Plan will decide the fate of our forests for the next few years (possibly, lifetime) and the government is seeking inputs to the first draft. Whether you're an expert or not, every response is valuable.</p>
 
+      <div id='goto-form'>Send in your feedback&nbsp;&rarr;</div>
+      <a class='read-draft' style='margin-left:20px;' target="_blank" href='http://www.moef.nic.in/sites/default/files/Inviting%20comments%20from%20all%20concerned%20stakeholders%20on%20Draft%20National%20Forest%20Policy%202018_1.pdf'>Read the Draft</a>
+
+      <hr/>
+      <h3 style='text-transform:uppercase;font-size: 14px;margin: 30px 0px;font-weight: 900;'>Good to know...</h3>
       <h3>What is a public consultation?</h3>
       <p>
         Government policies and decisions impact our lives, often the Government asks for our feedback before they finalise a law,
@@ -205,7 +235,6 @@
         <a href="https://www.facebook.com/groups/1042698099204934/about/">forum on Facebook</a> where you can participate in a detailed discussion on it.
       </p>
 
-      <div id='goto-form'>Give Feedback&nbsp;&rarr;</div>
     </div>
   </div>
   <div class="column form">
