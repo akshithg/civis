@@ -43,9 +43,10 @@
     }
 
     .overlay {
-      padding: 30px;
+      padding: 30px 30px 10px;
       max-width: 830px;
       margin: 0 auto;
+      border-bottom: 1px solid #eee;
     }
 
     .logo {
@@ -53,8 +54,9 @@
       margin: 4px 30px 4px 20px;
       float: left;
     }
-    #logo-header{
-      background-color:#e2f2ff;
+
+    #logo-header {
+      background-color: #e2f2ff;
       padding: 10px;
       height: 57px;
     }
@@ -68,7 +70,7 @@
 
     .title {
       font-size: 18px;
-      color:#808080;
+      color: #808080;
     }
 
     #page-content {
@@ -91,7 +93,7 @@
     h3 {
       margin-bottom: 0;
       letter-spacing: 0.4px;
-      color: #929292;
+      color: #666;
     }
 
     p {
@@ -111,7 +113,7 @@
       text-underline-position: under;
     }
 
-    #goto-form {
+    .goto-form {
       display: inline-block;
       padding: 10px 20px;
       color: white;
@@ -125,35 +127,88 @@
       /* float: right; */
       margin-bottom: 30px;
     }
-    #goto-form:hover{
+
+    #goto-form:hover {
       background: #0063a5;
     }
-    .header-link{
+
+    .header-link {
       float: right;
       margin: 10px 20px 4px 20px;
       font-size: 14px;
       font-weight: 300;
       color: #3296dc;
     }
-    #big-note{
+
+    #big-note {
       line-height: 38px;
       font-size: 25px;
       color: #222;
+      margin: 15px 0 20px;
     }
-    .icon{
+
+    .information {
+      position: relative;
+      border-bottom: 1px solid #eee;
+      max-width: 830px;
+      margin: 0 auto;
+    }
+
+    .information>h3 {
+      text-transform: uppercase;
+      font-size: 14px;
+      margin: 30px;
+      font-weight: 900;
+    }
+
+    .information .information-points {
+      position: relative;
+      list-style: none;
+      margin: 0;
+      padding: 0 30px;
+    }
+
+    .information-points li {
+      position: relative;
+      margin-bottom: 40px;
+      display: flex;
+      left: -90;
+    }
+
+    .information-points li h3 {
+      margin: 0 0 10px;
+    }
+
+    .information-points li p {
+      margin: 0;
+    }
+
+    .icon {
       width: 70px;
-      float: left;
       margin-right: 20px;
       opacity: 0.7;
+      align-self: flex-start;
     }
-    .top-align{
+
+    .top-align {
       vertical-align: top;
     }
-    .read-draft{
+
+    .read-draft {
       text-align: center;
       margin: 0px 0px 30px 30px;
     }
-    @media only screen and (min-width: 320px) and (max-width: 480px) {
+
+    .hidden-desktop {
+      display: none;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 830px) {
+
+      .hidden-desktop {
+        display: block;
+      }
+
       .column {
         width: 100%;
         height: 100vh;
@@ -167,25 +222,24 @@
       .title {
         font-size: 1rem;
       }
-      h1{
+      h1 {
         font-size: 1.9rem;
         letter-spacing: 0px;
         line-height: 33px;
         margin-top: 10px;
       }
-      h2{
 
-      }
-      h3{
+      h3 {
         font-size: 1rem;
         letter-spacing: 0.9px;
       }
+
       p {
         font-size: 1rem;
         line-height: 23px;
         margin: 2px 0 40px;
       }
-      .deadline{
+      .deadline {
         line-height: 25px;
         margin: 10px 0px 10px 0px;
         font-size: 18px;
@@ -195,17 +249,51 @@
         line-height: 29px;
         font-size: 21px;
       }
-      #goto-form{
+
+      .goto-form {
         width: 100%;
         text-align: center;
       }
-      .icon {
-        width: 50px;
-        float: left;
-        margin-right: 10px;
-        opacity: 0.7;
+
+      .information {
+        position: relative;
+        border-bottom: 1px solid #eee;
       }
-      .read-draft{
+
+      .information>h3 {
+        text-transform: uppercase;
+        font-size: 14px;
+        margin: 30px;
+        font-weight: 900;
+      }
+
+      .information .information-points {
+        list-style: none;
+        margin: 0;
+        padding: 0 30px;
+      }
+
+      .information-points li {
+        position: relative;
+        margin-bottom: 40px;
+        left: 0;
+      }
+
+      .information-points li h3 {
+        margin: 0 0 10px;
+      }
+
+      .information-points li p {
+        margin: 0;
+      }
+
+      .icon {
+        position: absolute;
+        opacity: 0.1;
+        left: calc(-58px + 0.02*100vw);
+      }
+
+      .read-draft {
         text-align: center;
         display: block;
         margin: 0px 0px 30px 0px;
@@ -218,59 +306,65 @@
 <body>
   <div class="column description" id="description">
     <div id='logo-header'>
-      <img class="logo" src="upload/logo2x.png" alt="Civis - BETTER DECISIONS TOGETHER"/>
+      <a href='http://www.civis.vote' target="_blank">
+        <img class="logo" src="upload/logo2x.png" alt="Civis - BETTER DECISIONS TOGETHER" />
+      </a>
       <a class="header-link" href='http://www.civis.vote' target="_blank">What is Civis?</a>
     </div>
     <div class="overlay">
-      <div class="title"><b>Ministry of Environment, Forest &amp; Climate Change</b> is seeking responses to</div>
-      <h1>National Forest Policy, 2018</h1>
+      <div class="title">
+        <b>Ministry of Environment, Forest &amp; Climate Change</b> is seeking responses to</div>
+      <h1>National Forest Policy Draft, 2018</h1>
       <div class="deadline">Deadline for responses: 14th April 2018&nbsp;&nbsp;&bull;
-      <span class='emphasis'>
-          <span style='font-weight:800;'><span id="days-remaining"></span> Days to go</span></span>
+        <span class='emphasis'>
+          <span style='font-weight:800;'>
+            <span id="days-remaining"></span> Days to go</span>
+        </span>
       </div>
-      <p id='big-note'>The Forest Plan will decide the fate of our forests for the next few years (possibly, lifetime) and the government is seeking inputs to the first draft. Whether you're an expert or not, every response is valuable.</p>
+      <p id='big-note'>The National Forest Plan of India decides the fate of our forests and the government is seeking inputs to their recently
+        released
+        <a target="_blank" href='http://www.moef.nic.in/sites/default/files/Inviting%20comments%20from%20all%20concerned%20stakeholders%20on%20Draft%20National%20Forest%20Policy%202018_1.pdf'>first draft</a>. Whether you're an expert or not, every response is valuable.</p>
 
-      <div id='goto-form'>Send in your feedback&nbsp;&rarr;</div>
-      <a class='read-draft' target="_blank" href='http://www.moef.nic.in/sites/default/files/Inviting%20comments%20from%20all%20concerned%20stakeholders%20on%20Draft%20National%20Forest%20Policy%202018_1.pdf'>Read the Draft</a>
+      <div class='goto-form'>Send in your feedback&nbsp;&rarr;</div>
+    </div>
 
-      <hr/>
-      <h3 style='text-transform:uppercase;font-size: 14px;margin: 30px 0px;font-weight: 900;'>Good to know...</h3>
-
-      <table>
-        <tr>
-          <td class='top-align'><img class='icon' src='upload/1.svg'/></td>
-          <td>
+    <div class="information">
+      <h3>Good to know...</h3>
+      <ul class="information-points">
+        <li>
+          <img class='icon' src='upload/1.svg' />
+          <div class="content">
             <h3>What is a public consultation?</h3>
-            <p>Government policies and decisions impact our lives and the Government often asks for our feedback before they finalise a law. This process is called a public consultation.</p>
-          </td>
-        </tr>
+            <p>Government policies and decisions impact our lives and the Government often asks for our feedback before they
+              finalise a law. This process is called a public consultation.</p>
+          </div>
+        </li>
 
-        <tr>
-        <td class='top-align'><img class='icon' src='upload/2.svg'/></td>
-        <td>
-          <h3>Why should you respond?</h3>
-          <p>Even though we may not be experts in the field this policy relates to, this policy decision impacts our life and environment.
-            This makes it important to be aware about the law and share your inputs.
-          </p>
-        </td>
-        </tr>
+        <li>
+          <img class='icon' src='upload/2.svg' />
+          <div class="content">
+            <h3>Why should you respond?</h3>
+            <p>Even though we may not be experts in the field this policy relates to, this policy decision impacts our life
+              and environment. This makes it important to be aware about the law and share your inputs.</p>
+          </div>
+        </li>
 
-        <tr>
-        <td class='top-align'><img class='icon' src='upload/3.svg'/></td>
-        <td>
-        <h3>What is this document?</h3>
-        <p>
-          The Government has put out a draft of the National Forest Policy and they want your feedback on it. (View the original document
-          <a href="./resources/dnfp2018.pdf">here</a>). The document helps you see the full plan and allows you to question and comment on specific portions of
-          the plan. In addition, we have put together a simple version of the plan that you can submit your feedback on and
-          we have a
-          <a href="https://www.facebook.com/groups/1042698099204934/about/">forum on Facebook</a> where you can participate in a detailed discussion on it.
-        </p>
-        </td>
-        </tr>
+        <li>
+          <img class='icon' src='upload/3.svg' />
+          <div class="content">
+            <h3>What is this document?</h3>
+            <p>The
+              <a href="./resources/dnfp2018.pdf">2018 draft of the National Forest Policy</a> describes the Government's overarching plan to manage the country's
+              forests. helps you see the full plan and asks you to question and comment on specific portions of the plan.
+              We have put together a simpler version so that you can submit your feedback faster. Civis also has a
+              <a href="https://www.facebook.com/groups/1042698099204934/about/">group on Facebook</a> where you can start and participate in discussions.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-      </table>
-
+    <div class="overlay">
+      <div class="hidden-desktop goto-form">Send in your feedback&nbsp;&rarr;</div>
     </div>
   </div>
   <div class="column form">
@@ -283,7 +377,7 @@
       let daysRemaining = Math.floor((expiryDate.getTime() - Date.now()) / 1000 / 60 / 60 / 24);
       document.querySelector('#days-remaining').innerHTML = daysRemaining.toString();
 
-      document.querySelector('#goto-form').addEventListener('click', function () {
+      document.querySelector('.goto-form').addEventListener('click', function () {
         document.querySelector('#description').style.visibility = 'hidden';
         ga('send', {
           hitType: 'event',
